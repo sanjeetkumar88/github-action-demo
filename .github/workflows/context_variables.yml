@@ -1,0 +1,18 @@
+name: Context Variable Demo
+
+on:
+  [push]
+
+env:
+  cloud: google-cloud
+
+jobs:
+  test_context_variables:
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push'}}
+    steps:
+      - name: "Checking Context Variable"
+        run: |
+          echo "Repository Name : ${{ github.repository }}"
+          echo "Workflow Name : ${{ github.workflow }}"
+          echo "Triggered by : ${{ github.triggering_actor }}"
