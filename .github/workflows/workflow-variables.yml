@@ -1,22 +1,19 @@
-name: Testing The Workflow Variables
-
-on:
-  workflow_dispatch
+name: Variable Demo
+on: push
 
 env:
-  cloud:google_cloud
-
+  GLOBAL_VAR: "I am everywhere" # Available to all jobs
 
 jobs:
-  getting_job:
+  build:
     runs-on: ubuntu-latest
     env:
-      Greeting:Hello
+      JOB_VAR: "I am only in this job"
     steps:
-      name: "Say Hello It's Monday"
-      run: echo "$Greeting $first_Name is using $cloud!"
-      env:
-        first_Name:Sanjeet
-    
-  
-
+      - name: Print variables
+        run: |
+          echo "Global: $GLOBAL_VAR"
+          echo "Job: $JOB_VAR"
+          echo "Step: $First_Name"
+        env:
+          First_Name: "Sanjeet Kumar"
