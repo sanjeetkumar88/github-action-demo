@@ -15,4 +15,4 @@ jobs:
       - name: "Configuration variable test"
         env:
           First_Name: Sanjeet
-        run: echo "$Greeting $First_Name" is using $cloud with project:${{ vars.PROJECT_ID }}"
+        run: echo "$Greeting $First_Name is using $cloud with project:${{ vars.PROJECT_ID }}"
