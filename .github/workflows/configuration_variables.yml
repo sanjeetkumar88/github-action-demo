@@ -6,7 +6,6 @@ on:
 env:
   cloud: google_cloud
 
-
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
@@ -14,6 +13,6 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Configuration variable test"
-        run: echo "$Greeting $First_Name is using $cloud with project: ${{vars.PROJECT_ID }}"
         env:
           First_Name: Sanjeet
+        run: echo "$Greeting $First_Name is using $cloud with project: ${{ vars.PROJECT_ID }}"
