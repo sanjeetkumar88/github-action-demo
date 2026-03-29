@@ -1,7 +1,7 @@
 name: Testing Configuration Variables
 
 on: 
-  workflow_dispatch
+  [push]
 
 env:
   cloud: google_cloud
